@@ -18,9 +18,9 @@ class NotificationManager {
         }
     }
 
-    func showReminder() {
+    func showReminder(title : String) {
         let content = UNMutableNotificationContent()
-        content.title = "No GitHub Commit Yet"
+        content.title = title
         content.body = "You haven’t committed today. Don’t break your streak!"
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
@@ -38,13 +38,13 @@ class NotificationManager {
         notification.title = title
         notification.body = body
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-
+        
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: trigger)
-
+        
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error showing notification: \(error.localizedDescription)")
             }
-        }    }
-
+        }
+    }
 }
