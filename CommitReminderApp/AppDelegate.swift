@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         appMenu = ApplicationMenu()
         statusItem.menu = appMenu.createMenu()
 
-        timer = Timer.scheduledTimer(timeInterval: 10 * 60 , target: self, selector: #selector(checkGitHub), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1 * 60 , target: self, selector: #selector(checkGitHub), userInfo: nil, repeats: true)
     }
 
     @objc public func checkGitHub() {

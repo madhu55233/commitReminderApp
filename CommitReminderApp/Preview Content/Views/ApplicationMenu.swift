@@ -18,10 +18,12 @@ class ApplicationMenu: NSObject {
         let token = KeychainManager.shared.load(service: "GitHubCommitApp", account: "token")
         
         if let username = username, let _ = token {
-            viewModel.fetchCommits(username: username, repo: "commitReminderApp")
+            viewModel.configure(username: username, repo: "commitReminderApp")
+
+            viewModel.fetchCommitsSelectorCompatible()
             
             Timer.scheduledTimer(withTimeInterval: 60.0 * 60.0, repeats: true) { _ in
-                self.viewModel.fetchCommits(username: username, repo: "commitReminderApp")
+                self.viewModel.fetchCommitsSelectorCompatible()
             }
             
             let contentView = CommitListView(viewModel: viewModel)
@@ -32,8 +34,12 @@ class ApplicationMenu: NSObject {
             menuItem.view = topView.view
             self.menu.insertItem(menuItem, at: 0)
             
-            let checkCommitItem = NSMenuItem(title: "Check Recent Commit", action: #selector(checkRecentCommit), keyEquivalent: "")
-            checkCommitItem.target = self
+            let checkCommitItem = NSMenuItem(
+                title: "Check Recent Commit",
+                action: #selector(viewModel.fetchCommitsSelectorCompatible),
+                keyEquivalent: ""
+            )
+            checkCommitItem.target = viewModel
             menu.addItem(checkCommitItem)
         } else {
             let contentView = Group {
@@ -54,16 +60,5 @@ class ApplicationMenu: NSObject {
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: ""))
         
         return menu
-    }
-    
-    @objc func checkRecentCommit() {
-        GitUtilities().getRecentCommits(owner: "madhu55233", repo: "commitReminderApp") { commits in
-            if let latest = commits.first {
-                let body = "\(latest.messageHeadline)\n\(latest.committedDate)"
-                NotificationManager.shared.showNotification(title: "Latest Commit", body: body)
-            } else {
-                NotificationManager.shared.showNotification(title: "Latest Commit", body: "No commits found")
-            }
-        }
     }
 }
