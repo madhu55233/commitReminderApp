@@ -46,7 +46,7 @@ struct CommitNode: Codable, Identifiable {
 struct CommitAuthor: Codable {
     let name: String
     let email: String
-    let user : LoginUser
+    let user : LoginUser?
 }
 
 struct LoginUser : Codable {

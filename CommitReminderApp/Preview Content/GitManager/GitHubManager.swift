@@ -25,7 +25,7 @@ class GitHubManager {
                     return false
                 }
                 
-                let login = commit.author.user.login
+                let login = commit.author.user?.login
                 
                 return login == self.username && calendar.isDate(committedDate, inSameDayAs: today)
             }

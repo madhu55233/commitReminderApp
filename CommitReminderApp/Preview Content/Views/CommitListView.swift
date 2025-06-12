@@ -12,7 +12,20 @@ struct CommitListView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if viewModel.commitList.isEmpty {
+            Text("Recent Commits")
+                .font(.title3)
+                .bold()
+                .padding(.bottom, 4)
+
+            if viewModel.isLoading {
+                HStack {
+                    ProgressView()
+                    Text("Fetching recent commits...")
+                        .foregroundColor(.secondary)
+                        .font(.caption)
+                }
+                .padding(.top, 10)
+            } else if viewModel.commitList.isEmpty {
                 Text("No recent commits")
                     .foregroundColor(.secondary)
             } else {
@@ -20,7 +33,7 @@ struct CommitListView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(commit.messageHeadline)
                             .font(.headline)
-                        Text(commit.author.user.login)
+                        Text(commit.author.user?.login ?? "madhumitha0523")
                             .font(.subheadline)
                         Text(formatDate(from: commit.committedDate))
                             .font(.caption2)
