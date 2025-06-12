@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2BC49C79-DD8E-4450-AA9E-8CD82F5A5F59"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommitReminderApp/NotificationManager.swift"
@@ -16,38 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "showReminder(title:)"
+            landmarkName = "showNotification(title:body:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2BC49C79-DD8E-4450-AA9E-8CD82F5A5F59 - 397eff1ce4f3f991"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CommitReminderApp.NotificationManager.showReminder(title: Swift.String) -&gt; ()"
-                  moduleName = "CommitReminderApp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/madhumitha/Desktop/CommitReminderApp/CommitReminderApp/NotificationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29">
-               </Location>
-               <Location
-                  uuid = "2BC49C79-DD8E-4450-AA9E-8CD82F5A5F59 - 33f2596fed5d9360"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CommitReminderApp.NotificationManager.showReminder(title: Swift.String) -&gt; ()"
-                  moduleName = "CommitReminderApp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/madhumitha/Desktop/CommitReminderApp/CommitReminderApp/NotificationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -80,96 +50,36 @@
             endingLineNumber = "28"
             landmarkName = "checkGitHub()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6F0DB5BF-CB54-4180-A802-2A5F57AEA0AF - 395f7a9dcd7559ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CommitReminderApp.AppDelegate.checkGitHub() -&gt; ()"
-                  moduleName = "CommitReminderApp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/madhumitha/Desktop/CommitReminderApp/CommitReminderApp/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28">
-               </Location>
-               <Location
-                  uuid = "6F0DB5BF-CB54-4180-A802-2A5F57AEA0AF - 1b18fa22a3a6af6a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in CommitReminderApp.AppDelegate.checkGitHub() -&gt; ()"
-                  moduleName = "CommitReminderApp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/madhumitha/Desktop/CommitReminderApp/CommitReminderApp/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3C8192FB-A22A-4572-B04B-9FA57FB88E9E"
+            uuid = "11E85A1C-FD30-4069-ADDA-414EB1B2229B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CommitReminderApp/Preview Content/Views/CommitListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43442EB6-DB45-46AF-B439-6214733D4B85"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommitReminderApp/Preview Content/GitManager/GitHubManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "fetchCommitActivity(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3C8192FB-A22A-4572-B04B-9FA57FB88E9E - a7ee01c3e53938fa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CommitReminderApp.GitHubManager.__allocating_init() -&gt; CommitReminderApp.GitHubManager"
-                  moduleName = "CommitReminderApp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/madhumitha/Desktop/CommitReminderApp/CommitReminderApp/Preview%20Content/GitManager/GitHubManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "3C8192FB-A22A-4572-B04B-9FA57FB88E9E - 65147f2036fe0647"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CommitReminderApp.GitHubManager.() -&gt; CommitReminderApp.GitHubManager.init() -&gt; CommitReminderApp.GitHubManager"
-                  moduleName = "CommitReminderApp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/madhumitha/Desktop/CommitReminderApp/CommitReminderApp/Preview%20Content/GitManager/GitHubManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "052D47C9-9BEE-4CC3-8956-C46E8C13F260"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CommitReminderApp/Preview Content/GitManager/GitHubManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "fetchCommitActivity(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -177,15 +87,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC9942C3-4E00-425B-8672-A7B61E1883A8"
+            uuid = "34686365-8C45-4DC1-8836-CD193DB448BE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommitReminderApp/Preview Content/GitManager/GitHubManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "fetchCommitActivity(completion:)"
             landmarkType = "7">
          </BreakpointContent>

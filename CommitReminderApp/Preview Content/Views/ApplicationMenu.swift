@@ -28,7 +28,7 @@ class ApplicationMenu: NSObject {
             
             let contentView = CommitListView(viewModel: viewModel)
             let topView = NSHostingController(rootView: contentView)
-            topView.view.frame.size = CGSize(width: 250, height: 180)
+            topView.view.frame.size = CGSize(width: 250, height: 350)
             
             let menuItem = NSMenuItem()
             menuItem.view = topView.view
@@ -44,7 +44,7 @@ class ApplicationMenu: NSObject {
         } else {
             let contentView = Group {
                 if username == nil || token == nil {
-                    ReminderView()
+                    InputView()
                 }
             }
             let topView = NSHostingController(rootView: contentView)

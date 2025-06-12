@@ -27,9 +27,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc public func checkGitHub() {
         GitHubManager.shared.fetchCommitActivity { committed in
             if !committed {
-                NotificationManager.shared.showReminder(title : "No commit today")
+                NotificationManager.shared.showNotification(title : "No commit today", body : "You haven’t committed today. Don’t break your streak!")
             }else {
-                NotificationManager.shared.showReminder(title : "Good job,you have committed today")
+                NotificationManager.shared.showNotification(title : "Great Progress! Today’s commit is in!", body: "You’ve kept your commit streak alive")
             }
         }
     }

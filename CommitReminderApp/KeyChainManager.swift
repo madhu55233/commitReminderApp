@@ -38,30 +38,4 @@ class KeychainManager {
         guard status == errSecSuccess, let data = item as? Data else { return nil }
         return String(data: data, encoding: .utf8)
     }
-    
-    static func saveToken(_ token: String) {
-           let data = token.data(using: .utf8)!
-           let query: [String: Any] = [
-               kSecClass as String: kSecClassGenericPassword,
-               kSecAttrAccount as String: "githubToken",
-               kSecValueData as String: data
-           ]
-           SecItemDelete(query as CFDictionary) // Remove existing
-           SecItemAdd(query as CFDictionary, nil)
-       }
-
-       static func loadToken() -> String? {
-           let query: [String: Any] = [
-               kSecClass as String: kSecClassGenericPassword,
-               kSecAttrAccount as String: "githubToken",
-               kSecReturnData as String: true,
-               kSecMatchLimit as String: kSecMatchLimitOne
-           ]
-           var result: AnyObject?
-           if SecItemCopyMatching(query as CFDictionary, &result) == noErr,
-              let data = result as? Data {
-               return String(data: data, encoding: .utf8)
-           }
-           return nil
-       }
 }

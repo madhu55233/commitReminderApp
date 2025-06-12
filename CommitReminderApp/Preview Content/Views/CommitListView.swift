@@ -20,9 +20,9 @@ struct CommitListView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(commit.messageHeadline)
                             .font(.headline)
-                        Text(commit.author.name)
+                        Text(commit.author.user.login)
                             .font(.subheadline)
-                        Text(commit.committedDate)
+                        Text(formatDate(from: commit.committedDate))
                             .font(.caption2)
                             .foregroundColor(.secondary)
                     }
@@ -32,5 +32,21 @@ struct CommitListView: View {
         }
         .padding()
         .frame(width: 250)
+    }
+}
+
+func formatDate(from dateString: String) -> String {
+    let inputFormatter = ISO8601DateFormatter()
+    inputFormatter.formatOptions = [.withInternetDateTime]
+
+    if let date = inputFormatter.date(from: dateString) {
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateStyle = .medium
+        outputFormatter.timeStyle = .short
+        outputFormatter.locale = Locale.current
+        outputFormatter.timeZone = TimeZone.current
+        return outputFormatter.string(from: date)
+    } else {
+        return "Invalid date"
     }
 }

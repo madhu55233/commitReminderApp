@@ -39,6 +39,9 @@ class GitUtilities {
                         author {
                           name
                           email
+                            user {
+                                login
+                              }
                         }
                       }
                     }

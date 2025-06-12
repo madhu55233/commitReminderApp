@@ -18,29 +18,14 @@ class NotificationManager {
         }
     }
 
-    func showReminder(title : String) {
+    func showNotification(title : String, body : String) {
         let content = UNMutableNotificationContent()
         content.title = title
-        content.body = "You haven’t committed today. Don’t break your streak!"
+        content.body = body
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error showing notification: \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    func showNotification(title: String, body: String) {
-        let notification = UNMutableNotificationContent()
-        notification.title = title
-        notification.body = body
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: trigger)
-        
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error showing notification: \(error.localizedDescription)")

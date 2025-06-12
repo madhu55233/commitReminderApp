@@ -1,5 +1,5 @@
 //
-//  ReminderView.swift
+//  InputView.swift
 //  CommitReminderApp
 //
 //  Created by Madhumitha on 10/06/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReminderView: View {
+struct InputView: View {
     @State private var username: String = ""
     @State private var token: String = ""
     @State private var saved = false
