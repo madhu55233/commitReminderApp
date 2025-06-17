@@ -52,3 +52,28 @@ struct CommitAuthor: Codable {
 struct LoginUser : Codable {
     let login : String
 }
+
+struct GraphQLResponse: Decodable {
+    let data: PRData
+}
+
+struct PRData: Decodable {
+    let repository: RepositoryName
+}
+
+struct RepositoryName: Decodable {
+    let pullRequests: PullRequests
+}
+
+struct PullRequests: Decodable {
+    let nodes: [PullRequest]
+}
+
+struct PullRequest: Codable, Identifiable {
+    var id: Int { number }
+    let number: Int
+    let title: String
+    let mergeable: String?
+    let url: String
+}
+
