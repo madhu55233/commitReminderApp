@@ -47,6 +47,7 @@ class GitHubManager {
                     number
                     title
                     mergeable
+                    url
                   }
                 }
               }
