@@ -69,10 +69,11 @@ struct PullRequests: Decodable {
     let nodes: [PullRequest]
 }
 
-struct PullRequest: Identifiable, Decodable {
-    var id: Int { number } 
+struct PullRequest: Codable, Identifiable {
+    var id: Int { number }
     let number: Int
     let title: String
-    let mergeable: String // "MERGEABLE", "CONFLICTING", or "UNKNOWN"
+    let mergeable: String?
+    let url: String
 }
 

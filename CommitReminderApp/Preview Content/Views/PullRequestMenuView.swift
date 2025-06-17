@@ -11,27 +11,40 @@ struct PullRequestMenuView: View {
     @StateObject private var viewModel = PullRequestViewModel()
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("🔀 Open PRs")
-                .font(.headline)
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Pull Requests")
+                .font(.title3)
+                .bold()
+                .padding(.bottom, 4)
 
-            ForEach(viewModel.pullRequests) { pr in
+            if viewModel.isLoading {
                 HStack {
-                    if pr.mergeable == "MERGEABLE" {
-                        Text("✅")
-                    } else if pr.mergeable == "CONFLICTING" {
-                        Text("⚠️")
-                    } else {
-                        Text("⏳")
-                    }
-
-                    Text("#\(pr.number): \(pr.title)")
+                    ProgressView()
+                    Text("Fetching recent pull requests...")
+                        .foregroundColor(.secondary)
                         .font(.caption)
                 }
+                .padding(.top, 10)
+            } else if viewModel.pullRequests.isEmpty {
+                Text("No recent pull requests")
+                    .foregroundColor(.secondary)
+            } else {
+                ForEach(viewModel.pullRequests.prefix(5)) { pr in
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(pr.title).font(.headline)
+                        Link(pr.url, destination: URL(string: pr.url)!)
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
+                        if(pr.mergeable == "CONFLICTING"){
+                            Text("Conflicting").font(.caption2).bold()
+                        }                        
+                    }
+                }
+                Divider()
             }
         }
         .padding()
-        .frame(width: 300)
+        .frame(width: 350)
         .onAppear {
             let owner = GitHubManager.shared.username ?? "your-username"
             viewModel.loadPrs(owner: owner, repo: "commitReminderApp")

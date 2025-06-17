@@ -48,14 +48,14 @@ class ApplicationMenu: NSObject {
                 menuItem.view = hostingController.view
                 menu.addItem(menuItem)
                 
-                let openPRItem = NSMenuItem(title: "Open PullRequests", action: #selector(showPullRequests), keyEquivalent: "")
+                let openPRItem = NSMenuItem(title: "Pull Requests", action: #selector(showPullRequests), keyEquivalent: "")
                 openPRItem.target = self
                 menu.addItem(openPRItem)
 
             case .pullRequests:
                 let prView = PullRequestMenuView()
                 let hostingController = NSHostingController(rootView: prView)
-                hostingController.view.frame.size = CGSize(width: 300, height: 350)
+                hostingController.view.frame.size = CGSize(width: 350, height: 100)
 
                 let menuItem = NSMenuItem()
                 menuItem.view = hostingController.view
